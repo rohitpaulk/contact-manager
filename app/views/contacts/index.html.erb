@@ -1,0 +1,26 @@
+<div class="container index-container">
+	<%= link_to("Add Contact", new_contact_path, {:class=> "add-contact"}) %>
+
+</div>
+
+<div class="container contacts-container">
+	<% for contact in @contacts %>
+		<div class="contact-box">
+			<div class="thumbnail">
+				<%= image_tag("http://0.gravatar.com/avatar/290870aed13916a0f0e8dfae7461053d", :width=>128, :height=>128) %>
+			</div>
+			<div class="details">
+				<span class="name"><%= contact.name %></span>
+				<label class="email">Email address:</label>
+				<span class="email"><%= contact.email %></span>
+				<label class="email">Phone number:</label>
+				<span class="phone"><%= contact.phone %></span>
+
+				<div class="actions">
+					<a href="#">Edit</a>
+					<a href="#" data-id="<%= contact.id %>" class="delete-contact">Delete</a>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

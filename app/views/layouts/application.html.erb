@@ -4,9 +4,17 @@
   <title>AddressBook</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+	<header>
+      <div class="container">
+        <h1>ContactManager</h1>
+        <p>A simple app to manage your contacts!</p>
+      </div>
+    </header>
 
 <%= yield %>
 

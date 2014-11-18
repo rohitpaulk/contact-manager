@@ -14,3 +14,23 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function () {
+	$('.delete-contact').click(function (e) {
+		var contact_id = $(e.target).data("id");
+		var data = {id: contact_id}
+		if (confirm("Are you sure?")) {
+			$.ajax({
+				type: "POST",
+				url: "/delete",
+				data: data,
+				success: function () {
+					$(e.target).parent().parent().parent().remove();
+				},
+				error: function () {
+					alert("Sorry, couldn't delete contact!");
+				}
+			});
+		}
+	});
+});
