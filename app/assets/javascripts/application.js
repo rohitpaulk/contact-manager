@@ -19,7 +19,7 @@ $(document).on('page:fetch', function() { NProgress.start(); })
 $(document).on('page:change', function() { NProgress.done(); })
 $(document).on('page:restore', function() { NProgress.remove(); })
 
-$(document).ready(function () {
+function onReady() {
 	$('.delete-contact').click(function (e) {
 		var contact_id = $(e.target).data("id");
 		var data = {id: contact_id}
@@ -82,6 +82,7 @@ $(document).ready(function () {
 
 
 	});
+};
 
-
-});
+$(document).on('page:change', onReady);
+$(document).ready(onReady);
