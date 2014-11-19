@@ -66,10 +66,10 @@ function onReady() {
 			url: "/update",
 			data: data,
 			success: function (data) {
-				console.log(data.email);
-				alert("Saved!");
 				parentElement.find('span.email').html(data.email);
 				parentElement.find('span.phone').html(data.phone);
+				parentElement.find('img').attr('src', data.avatar_url);
+
 				parentElement.find('.fields-show').show();
 				parentElement.find('.fields-edit').hide();
 			},
@@ -85,4 +85,4 @@ function onReady() {
 };
 
 $(document).on('page:change', onReady);
-$(document).ready(onReady);
+//$(document).ready(onReady);

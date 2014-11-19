@@ -11,3 +11,4 @@ This is a vanilla Rails app, usual setup.
 - Change Edit/Cancel links to buttons
 - Better error messages
 - ~~Server side email validation~~
+- ~~Update avatar URL when editing inline~~

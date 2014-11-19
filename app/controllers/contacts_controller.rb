@@ -24,7 +24,11 @@ class ContactsController < ApplicationController
 		@contact.email = params[:email]
 		@contact.phone = params[:phone]
 		if @contact.save
-			render :json => @contact
+			render :json => {
+				email: @contact.email,
+				phone: @contact.phone,
+				avatar_url: @contact.avatar_url
+			}
 		else
 			render :nothing => true, :status => 400
 		end
