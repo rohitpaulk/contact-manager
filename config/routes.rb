@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'new' => 'contacts#new', as: :new_contact
 
   post 'create' => 'contacts#create', as: :create_contact
+  post 'update' => 'contacts#update', as: :update_contact
   post 'delete' => 'contacts#delete', as: :delete_contact
 
   # Example of regular route:

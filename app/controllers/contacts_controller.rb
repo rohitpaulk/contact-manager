@@ -19,6 +19,17 @@ class ContactsController < ApplicationController
 		end
 	end
 
+	def update
+		@contact = Contact.find(params[:id])
+		@contact.email = params[:email]
+		@contact.phone = params[:phone]
+		if @contact.save
+			render :json => @contact
+		else
+			render :nothing => true, :status => 400
+		end
+	end
+
 	def delete
 		@contact = Contact.find(params[:id])
 		@contact.delete

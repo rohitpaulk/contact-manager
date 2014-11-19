@@ -41,8 +41,8 @@ a.add-contact{
 
 }
 .contact-box .thumbnail{
-	width:128px;
-	height:128px;
+	width:100px;
+	height:100px;
 	float:left;
 	box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.3);
 }
@@ -50,8 +50,9 @@ a.add-contact{
 .contact-box .details{
 	float:left;
 	text-align:left;
-	width:182px;
+	width:200px;
 	padding-left:20px;
+	padding-right:20px;
 	word-wrap: break-word;
 	.name{
 		display:block;
@@ -78,6 +79,9 @@ a.add-contact{
 		a{
 			margin: 0px 5px 0px 0px;
 		}
+	}
+	.fields-edit{
+		display: none;
 	}
 }
 

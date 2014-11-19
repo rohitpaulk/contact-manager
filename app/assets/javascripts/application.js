@@ -33,4 +33,51 @@ $(document).ready(function () {
 			});
 		}
 	});
+
+	$('.edit-contact').click(function (e) {
+		var parentElement = $(e.target).parent().parent().parent().parent();
+		parentElement.find('.fields-show').hide();
+		parentElement.find('.fields-edit').show();
+	});
+
+	$('.cancel-edit-contact').click(function (e) {
+		var parentElement = $(e.target).parent().parent().parent().parent();
+		parentElement.find('.fields-show').show();
+		parentElement.find('.fields-edit').hide();
+	});
+
+	$('.save-contact').click(function (e) {
+		var parentElement = $(e.target).parent().parent().parent().parent();
+		var contact_id = $(parentElement).data("id");
+		var email = parentElement.find('input.email').val();
+		var phone = parentElement.find('input.phone').val();
+		var data = {
+			id: contact_id,
+			email: email,
+			phone: phone
+		}
+
+		$.ajax({
+			type: "POST",
+			url: "/update",
+			data: data,
+			success: function (data) {
+				console.log(data.email);
+				alert("Saved!");
+				parentElement.find('span.email').html(data.email);
+				parentElement.find('span.phone').html(data.phone);
+				parentElement.find('.fields-show').show();
+				parentElement.find('.fields-edit').hide();
+			},
+			error: function () {
+				alert("Sorry, couldn't update contact!");
+				parentElement.find('.fields-show').show();
+				parentElement.find('.fields-edit').hide();
+			}
+		});
+
+
+	});
+
+
 });
