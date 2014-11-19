@@ -7,7 +7,7 @@ This is a vanilla Rails app, usual setup.
 
 ### Improvements
 
-- Add a sliding progress bar like with youtube
+- ~~Add a sliding progress bar like with youtube~~
 - Change Edit/Cancel links to buttons
 - Better error messages
-- Server side email validation
+- ~~Server side email validation~~
