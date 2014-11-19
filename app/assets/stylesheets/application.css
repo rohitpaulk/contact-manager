@@ -27,6 +27,9 @@
 	margin-right: auto;
 }
 
+a{
+	color:#6f5499;
+}
 body{
 	font-family: "OpenSans", sans-serif;
 	color:#333333;

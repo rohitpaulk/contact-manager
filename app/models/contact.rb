@@ -5,6 +5,6 @@ class Contact < ActiveRecord::Base
 
 	def avatar_url
 		hash = Digest::MD5.hexdigest(email.downcase)
-		"http://www.gravatar.com/avatar/#{hash}"
+		"https://www.gravatar.com/avatar/#{hash}"
 	end
 end

@@ -15,6 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).on('page:fetch', function() { NProgress.start(); })
+$(document).on('page:change', function() { NProgress.done(); })
+$(document).on('page:restore', function() { NProgress.remove(); })
+
 $(document).ready(function () {
 	$('.delete-contact').click(function (e) {
 		var contact_id = $(e.target).data("id");
