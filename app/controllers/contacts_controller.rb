@@ -15,6 +15,7 @@ class ContactsController < ApplicationController
 		if @contact.save
 			redirect_to root_path
 		else
+			flash[:error] = "Oops, invalid values!"
 			render :new
 		end
 	end

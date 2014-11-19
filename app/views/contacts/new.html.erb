@@ -2,7 +2,12 @@
 	<%= link_to("Back to Home", root_path) %>
 	<h2> New Contact </h2>
 
+    <% flash.each do |key, value| %>
+      	<%= content_tag :div, value, class: "flash #{key}" %>
+    <% end %>
+
 	<%= form_tag "/create" do %>
+
 		<%= text_field_tag(:name, @contact.name, :placeholder => "Name") %>
 		<%= text_field_tag(:phone, @contact.phone, :placeholder => "Phone Number") %>
 		<%= email_field_tag(:email, @contact.email, :placeholder => "Email") %>
